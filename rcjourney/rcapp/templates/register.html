@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="en">
 <head>
-	<title>Login</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>RC Journey - Register</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
 	<style>
@@ -15,6 +17,7 @@
 			height: 100%;
 			background: #333 !important;
 		}
+
 		.user_card {
 			width: 350px;
 			margin-top: auto;
@@ -26,10 +29,9 @@
 			flex-direction: column;
 			padding: 10px;
 			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
-			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+			  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+			  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
 			border-radius: 5px;
-
 		}
 
 		.form_container {
@@ -39,30 +41,34 @@
 		#form-title{
 			color: #000;
 		}
+
 		.login_btn {
 			width: 100%;
 			background: #0073d1 !important;
 			color: white !important;
 		}
+
 		.login_btn:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
+
 		.login_container {
 			padding: 0 2rem;
 		}
+
 		.input-group-text {
 			background: #000 !important;
 			color: white !important;
 			border: 0 !important;
 			border-radius: 0.25rem 0 0 0.25rem !important;
 		}
+
 		.input_user,
 		.input_pass:focus {
 			box-shadow: none !important;
 			outline: 0px !important;
 		}
-
 	</style>
 
 </head>
@@ -71,7 +77,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">REGISTER ACCOUNT</h3>
+					<h3 id="form-title">Register Account</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
@@ -118,18 +124,17 @@
 		</div>
 	</div>
 	<script>
-						/* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
-		//We start indexing at one because CSRF_token is considered and input field 
-		 */
+		// Set placeholder values here using vanilla Javascript
+		// We start indexing at one because csrf_token is considered an input field 
 
-		//Query All input fields
+		// Query All input fields
 		let form_fields = document.getElementsByTagName('input')
 		form_fields[1].placeholder='Username..';
 		form_fields[2].placeholder='Email..';
 		form_fields[3].placeholder='Enter password...';
 		form_fields[4].placeholder='Re-enter Password...';
 
-
+    // Add form-control to the classes
 		for (let field in form_fields){	
 			form_fields[field].className += ' form-control'
 		}

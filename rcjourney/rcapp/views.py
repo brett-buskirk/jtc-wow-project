@@ -7,9 +7,16 @@ from .forms import CreateUserForm
 
 
 # Create your views here.
+def landing(request):
+  if request.user.is_authenticated:
+    return redirect('dashboard')
+  else:
+    return render(request, 'landing.html')
+
+
 def registerPage(request):
   if request.user.is_authenticated:
-    return redirect('home')
+    return redirect('dashboard')
   else:
     form = CreateUserForm()
     
@@ -27,7 +34,7 @@ def registerPage(request):
 
 def loginPage(request):
   if request.user.is_authenticated:
-    return redirect('home')
+    return redirect('dashboard')
   else:
     if request.method == 'POST':
       username = request.POST.get('username')
@@ -37,7 +44,7 @@ def loginPage(request):
       
       if user is not None:
         login(request, user)
-        return redirect('home')
+        return redirect('dashboard')
       else:
         messages.info(request, 'Username or Password is incorrect')
       
@@ -47,10 +54,10 @@ def loginPage(request):
 
 def logoutUser(request):
   logout(request)
-  return redirect('login')
+  return redirect('landing')
 
 
-@login_required(login_url='login')
-def home(request):
+@login_required(login_url='landing')
+def dashboard(request):
   context = {}
-  return render(request, 'home.html', context)
+  return render(request, 'dashboard.html', context)
