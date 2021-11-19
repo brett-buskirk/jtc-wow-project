@@ -1,0 +1,55 @@
+body {
+  background-image: url('../images/landing.jpg');
+  background-size: cover;
+}
+
+.card {
+  flex-direction: row;
+  align-items: center;
+  height: 175px;
+  width: 90vw;
+  margin: 20px auto;
+  background-color: rgba(255, 255, 255, .6);
+  border-top-left-radius: 25%;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card img {
+  width: 135px;
+  height: 135px;
+  border-radius: 100%;
+  margin-top: 17px;
+  margin-left: 9px;
+}
+
+#about {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  word-wrap: break-word;
+  background-color: rgba(255, 255, 255, .6);
+  border-radius: .25rem;
+  border-top-right-radius: 25%;
+  margin: 20px auto;
+  align-items: center;
+  width: 90vw;
+  height: fit-content;
+}
+
+.about-body {
+  display: inline-block;
+}
+
+.about-title {
+  width: 625px;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  .card {
+    height: fit-content;
+  }
+}
