@@ -17,8 +17,7 @@ Next set up the virtual environment and load the dependencies with:
 ```bash
   python -m venv venv
   source venv/bin/activate
-  pip install django
-  pip freeze > requirements.txt
+  pip install -r requirements.txt
 ```
 
 Now move into the `rcjourney` directory and start the server:
