@@ -63,8 +63,8 @@ def editprofile(request):
 
 
 @login_required(login_url='landing')
-def forums(request):
-    return render(request, 'forums.html')
+def forum(request):
+    return render(request, 'forum.html')
 
 
 @login_required(login_url='landing')
