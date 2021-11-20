@@ -52,18 +52,22 @@ def loginPage(request):
         return render(request, 'login.html', context)
 
 
+@login_required(login_url='landing')
 def profile(request):
     return render(request, 'profile.html')
 
 
+@login_required(login_url='landing')
 def editprofile(request):
     return render(request, 'editprofile.html')
 
 
+@login_required(login_url='landing')
 def forums(request):
     return render(request, 'forums.html')
 
 
+@login_required(login_url='landing')
 def listings(request):
     return render(request, 'listings.html')
 
