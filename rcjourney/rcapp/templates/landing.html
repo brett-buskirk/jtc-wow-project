@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -6,17 +7,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RJ Journey</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/landing.css' %}">
   <style>
 
   </style>
 </head>
 
 <body>
-  <h1>Landing Page</h1>
-  <a href="{% url 'login' %}">Login</a>
-  <a href="{% url 'register' %}">Register</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">RC Journey</a>
+  
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}">Register</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="card">
+    <img src="{% static 'images/landing-card-1.jpg' %}" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">Testimonial One</h5>
+      <p class="card-text">
+        Ullamco consequat consequat sunt cupidatat duis esse ut consectetur consectetur. Adipisicing qui nostrud in anim labore nostrud do. Ipsum pariatur ipsum veniam ullamco ullamco velit deserunt qui. Sunt ex do proident magna. Do Lorem minim dolor tempor irure duis officia reprehenderit ea ex amet reprehenderit do.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'images/landing-card-2.jpg' %}" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">Testimonial Two</h5>
+      <p class="card-text">
+        Ullamco consequat consequat sunt cupidatat duis esse ut consectetur consectetur. Adipisicing qui nostrud in anim labore nostrud do. Ipsum pariatur ipsum veniam ullamco ullamco velit deserunt qui. Sunt ex do proident magna. Do Lorem minim dolor tempor irure duis officia reprehenderit ea ex amet reprehenderit do.
+      </p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="{% static 'images/landing-card-3.jpg' %}" class="card-img-top" />
+    <div class="card-body">
+      <h5 class="card-title">Testimonial Three</h5>
+      <p class="card-text">
+        Ullamco consequat consequat sunt cupidatat duis esse ut consectetur consectetur. Adipisicing qui nostrud in anim labore nostrud do. Ipsum pariatur ipsum veniam ullamco ullamco velit deserunt qui. Sunt ex do proident magna. Do Lorem minim dolor tempor irure duis officia reprehenderit ea ex amet reprehenderit do.
+      </p>
+    </div>
+  </div>
+
+  <div id="about">
+    <div class="about-body card-body">
+      <p class="card-text">
+        Enim occaecat ipsum exercitation exercitation. Eu ex quis fugiat voluptate. Commodo et magna nostrud nulla. Est dolore irure aliqua excepteur ullamco minim.
+        <br><br>
+        Mollit ad officia in fugiat esse consectetur ut nulla est deserunt consectetur laborum adipisicing ullamco. Laboris ad in sunt enim tempor irure sit. Et minim excepteur laborum mollit adipisicing culpa. Elit consectetur quis sint dolore voluptate aliquip proident ex enim ex mollit quis laborum.
+        <br><br>
+        Lorem laboris sint enim occaecat. Do sit sit id quis reprehenderit incididunt adipisicing quis ullamco do in duis. Tempor sunt ea Lorem ea sint mollit ad enim consectetur esse est consectetur est nisi. Ea do do pariatur nisi voluptate consectetur fugiat excepteur duis sunt. Ad ullamco consectetur id aute exercitation exercitation. Consectetur nostrud cillum voluptate labore voluptate irure. Ut sint sunt nostrud est occaecat adipisicing non consequat Lorem aute voluptate sit ipsum.
+      </p>
+    </div>
+    <div class="about-body about-title">
+      <h1>About Us</h1>
+    </div>
+  </div>
 </body>
 </html>
 
