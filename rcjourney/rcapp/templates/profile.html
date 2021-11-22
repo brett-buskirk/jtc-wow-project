@@ -3,32 +3,150 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <script
+        src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"
+        defer></script>
+    <link rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+        integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">RC Journey</a>
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'forum' %}">Forum</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'listings' %}">Listings</a>
-      </li>
-    </ul>
-  </nav>
-  <h1>This is the profile page</h1>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">RC Journey</a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'forum' %}">Forum</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'listings' %}">Listings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'editprofile' %}">Edit
+                    Profile</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container-fluid row">
+        <img src="../static/images/profileplaceholder.png" classs=".rounded col"
+            id="profilepic" alt="Profile Image">
+        <div class="col text-justify" id="synopsis"><span>THIS WILL BE A
+                PLACEHOLDER FOR THE PROFILE PIC AND SYNOPSIS</span> Lorem ipsum
+            dolor sit,
+            amet
+            consectetur
+            adipisicing
+            elit. Consequuntur maxime quam, doloremque modi ipsa error
+            officia
+            adipisci facilis corporis veritatis asperiores
+            necessitatibus
+            architecto. Explicabo nostrum dignissimos deleniti. Ipsa,
+            expedita
+            architecto.Lorem ipsum dolor sit, amet consectetur
+            adipisicing
+            elit. Consequuntur maxime quam, doloremque modi ipsa error
+            officia
+            adipisci facilis corporis veritatis asperiores
+            necessitatibus
+            architecto. Explicabo nostrum dignissimos deleniti. Ipsa,
+            expedita
+            architecto.Lorem ipsum dolor sit, amet consectetur
+            adipisicing
+            elit. Consequuntur maxime quam, doloremque modi ipsa error
+            officia
+            adipisci facilis corporis veritatis asperiores
+            necessitatibus
+            architecto. Explicabo nostrum dignissimos deleniti. Ipsa,
+            expedita
+            architecto.
+        </div>
+    </div>
+    <div class="blogpost row container-fluid border border-dark m-3">
+        <img src="../static/images/profileplaceholder.png"
+            class=".img-thumbnail col-2" id="thumbnailpic" alt="Profile Image"
+            width="100" height="125">
+        <div class="col text-justify" id="blogpost">
+            <h6 class="text-right"><span class="m-1">11/20/21</span> <span
+                    class="m-1">8:32
+                    PM</span></h6>
+            <span>THIS WILL
+                BE
+                A
+                PLACEHOLDER FOR THE PROFILE THUMBNAIL PIC AND BLOG POST</span>
+            Lorem ipsum
+            dolor sit,
+            amet
+            consectetur
+            adipisicing
+            elit. Consequuntur maxime quam, doloremque modi ipsa error
+            officia
+            adipisci facilis corporis veritatis asperiores
+            necessitatibus
+            architecto.
+        </div>
+    </div>
+    <div class="blogpost row container-fluid border border-dark m-3">
+        <img src="../static/images/profileplaceholder.png"
+            class=".img-thumbnail col-2" id="thumbnailpic" alt="Profile Image"
+            width="100" height="125">
+        <div class="col text-justify" id="blogpost">
+            <h6 class="text-right"><span class="m-1">11/20/21</span> <span
+                    class="m-1">8:32
+                    PM</span></h6>
+            <span>THIS WILL
+                BE
+                A
+                PLACEHOLDER FOR THE PROFILE THUMBNAIL PIC AND BLOG POST</span>
+            Lorem ipsum
+            dolor sit,
+            amet
+            consectetur
+            adipisicing
+            elit. Consequuntur maxime quam, doloremque modi ipsa error
+            officia
+            adipisci facilis corporis veritatis asperiores
+            necessitatibus
+            architecto.
+        </div>
+    </div>
+    <div class="blogpost row container-fluid border border-dark m-3">
+        <img src="../static/images/profileplaceholder.png"
+            class=".img-thumbnail col-2" id="thumbnailpic" alt="Profile Image"
+            width="100" height="125">
+        <div class="col text-justify" id="blogpost">
+            <h6 class="text-right"><span class="m-1">11/20/21</span> <span
+                    class="m-1">8:32
+                    PM</span></h6>
+            <span>THIS WILL
+                BE
+                A
+                PLACEHOLDER FOR THE PROFILE THUMBNAIL PIC AND BLOG POST</span>
+            Lorem ipsum
+            dolor sit,
+            amet
+            consectetur
+            adipisicing
+            elit. Consequuntur maxime quam, doloremque modi ipsa error
+            officia
+            adipisci facilis corporis veritatis asperiores
+            necessitatibus
+            architecto.
+        </div>
+    </div>
 </body>
 
 </html>
