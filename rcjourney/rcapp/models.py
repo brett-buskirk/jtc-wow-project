@@ -1,15 +1,12 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 # TODO add user model
 
 
-class User(models.Model):
-    id = models.AutoField(primary_key=True),
-    username = models.CharField(max_length=255),
-    email = models.EmailField(max_length=255),
-    password = models.CharField(max_length=255),
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=255, null=True, blank=True),
     last_name = models.CharField(max_length=255, null=True, blank=True),
     profile_image = models.ImageField(null=True, blank=True),
@@ -23,3 +20,5 @@ class Post(models.Model):
     user_id = models.ForeignKey('User', on_delete=models.CASCADE),
     post_content = models.TextField(blank=True, null=True),
     date_created = models.DateTimeField(auto_now=True, null=True,)
+
+# TODO add comment model
