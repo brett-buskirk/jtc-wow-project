@@ -1,19 +1,25 @@
 from django.db import models
-from django.db.models.fields.related import ForeignKey
 
+from django.contrib.auth.models import User
 # Create your models here.
 
-
-class BlogPost(models.Model):
-    blog_postid = models.AutoField(primary_key=True)
-    userid = models.AutoField(ForeignKey=True)
-    blog_post = models.CharField(max_length=255)
-
-    # ! might want to include comment id in case we want to pull up all blog posts with that have comments with a certain keyword
+# TODO add user model
 
 
-class Comment(models.Model):
-    commentid = models.AutoField(primary_key=True)
-    blog_postid = models.AutoField(ForeignKey=True)
-    userid = models.AutoField(ForeignKey=True)
-    comment_body = models.CharField(max_length=255)
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=255, null=True, blank=True),
+    last_name = models.CharField(max_length=255, null=True, blank=True),
+    profile_image = models.ImageField(null=True, blank=True),
+    bio = models.TextField(null=True, blank=True)
+
+# TODO add post model
+
+
+class Post(models.Model):
+    post_id = models.AutoField(primary_key=True),
+    user_id = models.ForeignKey('User', on_delete=models.CASCADE),
+    post_content = models.TextField(blank=True, null=True),
+    date_created = models.DateTimeField(auto_now=True, null=True,)
+
+# TODO add comment model
