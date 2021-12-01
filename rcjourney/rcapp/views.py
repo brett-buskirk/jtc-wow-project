@@ -4,7 +4,10 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import CreateUserForm
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+from .forms import CreateUserForm, PostForm
+from .models import *
 
 
 # Create your views here.
@@ -66,10 +69,20 @@ def editprofile(request):
 @login_required(login_url='landing')
 def forum(request):
     if request.method == 'GET':
-        users = User.objects.all().order_by('id')
-        print('Users: ', users)
-        context = {users: users}
+        form = PostForm()
+        posts = Post.objects.all()
+        print("Posts: ", posts)
+        context = {'form': form, 'posts': posts}
         return render(request, 'forum.html', context)
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            if 'create' in request.POST:
+                post = form.cleaned_data.get('post')
+                tags = form.cleaned_data.get('tags')
+                post = Post.objects.update_or_create(post=post)
+                post[0].tags.set(tags)
+    return HttpResponseRedirect(reverse('forum'))
 
 
 @login_required(login_url='landing')
