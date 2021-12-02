@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
+
 # Create your models here.
 
 # TODO add user model
@@ -25,7 +26,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     post_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.TextField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now=True, null=True,)
     tags = models.ManyToManyField(Tag)

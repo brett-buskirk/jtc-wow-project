@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .forms import CreateUserForm, PostForm
+from .forms import CreateUserForm, PostForm, EditProfileForm
 from .models import *
 
 
@@ -63,15 +63,17 @@ def profile(request):
 
 @login_required(login_url='landing')
 def editprofile(request):
-    return render(request, 'editprofile.html')
+    user = request.user.profile
+    form = EditProfileForm(instance=user)
+    context = {'form': form}
+    return render(request, 'editprofile.html', context)
 
 
 @login_required(login_url='landing')
 def forum(request):
     if request.method == 'GET':
         form = PostForm()
-        posts = Post.objects.all()
-        print("Posts: ", posts)
+        posts = Post.objects.all().order_by('-date_created')
         context = {'form': form, 'posts': posts}
         return render(request, 'forum.html', context)
     if request.method == 'POST':
@@ -80,8 +82,9 @@ def forum(request):
             if 'create' in request.POST:
                 post = form.cleaned_data.get('post')
                 tags = form.cleaned_data.get('tags')
-                post = Post.objects.update_or_create(post=post)
-                post[0].tags.set(tags)
+                forum_post = Post(post=post, user_id=request.user)
+                forum_post.save()
+                forum_post.tags.set(tags)
     return HttpResponseRedirect(reverse('forum'))
 
 

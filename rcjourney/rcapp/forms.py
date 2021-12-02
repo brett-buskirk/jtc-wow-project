@@ -12,10 +12,17 @@ class CreateUserForm(UserCreationForm):
         fields = ['username', 'email', 'password1', 'password2']
 
 
+class EditProfileForm(ModelForm):
+    class Meta:
+        model = Profile
+        fields = '__all__'
+        exclude = ['user']
+
 # class PostForm(ModelForm):
 #     class Meta:
 #         model = Post
 #         fields = ['post', 'tags']
+
 
 class PostForm(forms.Form):
     post = forms.CharField(widget=forms.Textarea, required=True)
