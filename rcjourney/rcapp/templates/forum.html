@@ -72,8 +72,8 @@
       <div class="row no-gutters">
         <div class="col-md-4">
           <img
-            src="{% static 'images/profile1.png' %}"
-            alt=""
+            src="{{ post.user_id.profile_image.url }}"
+            alt="{{ post.user_id.user.username }}"
             class="card-img"
             alt="..."
           />
