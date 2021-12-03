@@ -90,7 +90,9 @@ def forum(request):
 
 @login_required(login_url='landing')
 def listings(request):
-    return render(request, 'listings.html')
+    profiles = Profile.objects.all()
+    context = {'profiles': profiles}
+    return render(request, 'listings.html', context)
 
 
 def logoutUser(request):
