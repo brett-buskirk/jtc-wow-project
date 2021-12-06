@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import CreateUserForm, PostForm, EditProfileForm
@@ -74,6 +75,16 @@ def forum(request):
     if request.method == 'GET':
         form = PostForm()
         posts = Post.objects.all().order_by('-date_created')
+        page = request.GET.get('page', 1)
+        paginator = Paginator(posts, 2)
+
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+
         context = {'form': form, 'posts': posts}
         return render(request, 'forum.html', context)
     if request.method == 'POST':
