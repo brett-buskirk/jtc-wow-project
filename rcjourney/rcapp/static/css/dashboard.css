@@ -21,10 +21,11 @@ body {background: url("/static/images/db-background.jpeg") no-repeat;
 .navi a{color:brown;
         position: relative;
         font-size: 54px;
+        padding: 10px;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-        transition: .3s all cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+        transition: ease-in-out 0.2s;
             cursor: pointer;
         }
 .navi a:hover{text-decoration: none;
     text-shadow: 0 6px 10px rgba(0,0,0,.5), 0 0 6px rgba(0,0,0,.05);
-    font-size: 35px;}
+    font-size: 64px;}
