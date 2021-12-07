@@ -76,7 +76,7 @@ def forum(request):
         form = PostForm()
         posts = Post.objects.all().order_by('-date_created')
         page = request.GET.get('page', 1)
-        paginator = Paginator(posts, 2)
+        paginator = Paginator(posts, 1)  # change the number of posts per page
 
         try:
             posts = paginator.page(page)
@@ -93,7 +93,7 @@ def forum(request):
             if 'create' in request.POST:
                 post = form.cleaned_data.get('post')
                 tags = form.cleaned_data.get('tags')
-                forum_post = Post(post=post, user_id=request.user)
+                forum_post = Post(post=post, user_id=request.user.profile)
                 forum_post.save()
                 forum_post.tags.set(tags)
     return HttpResponseRedirect(reverse('forum'))

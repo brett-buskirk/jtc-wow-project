@@ -105,12 +105,16 @@
         >
       </li>
       {% else %}
-      <li class="disabled page-item"><span>&laquo;</span></li>
+      <li class="disabled page-item">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
       {% endif %}
       <br />
       {% for i in posts.paginator.page_range %} {% if posts.number == i %}
-      <li class="active page-item">
-        <span>{{ i }} <span class="sr-only">(current)</span></span>
+      <li class="disabled page-item">
+        <a class="page-link" href="#"
+          >{{ i }} <span class="sr-only">(current)</span></a
+        >
       </li>
       {% else %}
       <li class="page-item">
