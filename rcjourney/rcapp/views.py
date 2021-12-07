@@ -9,6 +9,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import CreateUserForm, PostForm, EditProfileForm
 from .models import *
+from .filters import PostFilter
 
 
 # Create your views here.
@@ -76,7 +77,9 @@ def forum(request):
         form = PostForm()
         posts = Post.objects.all().order_by('-date_created')
         page = request.GET.get('page', 1)
-        paginator = Paginator(posts, 1)  # change the number of posts per page
+        paginator = Paginator(posts, 2)  # changes the number of posts per page
+        # postFilter = PostFilter(request.GET, queryset=posts)
+        # paginator = postFilter.qs
 
         try:
             posts = paginator.page(page)
