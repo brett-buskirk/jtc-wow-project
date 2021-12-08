@@ -93,6 +93,7 @@
         <div class="col-md-8">
           <div class="card-body">
             <h5 class="card-title">{{ post.user_id.user.username }}</h5>
+            
             <p class="card-text">{{ post.post }}</p>
             {% for tag in post.tags.all %}
             <p class="card-text">{{ tag.name }}</p>

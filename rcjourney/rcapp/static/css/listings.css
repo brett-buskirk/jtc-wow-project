@@ -1,0 +1,33 @@
+body{background: url("/static/images/listings-bg.jpg") no-repeat; background-size: 100%;}
+.container {width: 100%;
+            height: auto;
+            margin-left: 30%;
+            }
+.card-container {width:800px;
+                 height: 200px;
+                }
+.left {float:left;
+        width: 200px;
+        height: 200px;}
+.right {float:right;
+        width:600px;
+        height: 200px;
+        background-color:rgba(182, 240, 240, .6);
+        text-align: center;
+        position: relative;}
+.datejoined { position:absolute;
+                bottom: 0;
+            margin-left: 200px;
+            margin-bottom: 0px;}
+.logo1 {
+                text-align: center;
+                width: 75%;
+                height: 150px;
+                line-height: 150px;
+                margin-bottom;: 20px
+            }
+.logo1 a{color:brown;
+                font-size: 72px;
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                position: absolute;
+            }

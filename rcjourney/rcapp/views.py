@@ -59,9 +59,11 @@ def loginPage(request):
 
 
 @login_required(login_url='landing')
-def profile(request):
-    return render(request, 'profile.html')
-
+def profile(request, pk):
+    profile = Profile.objects.get(user_id=pk)
+    # profile = Profile.objects.get(profile)
+    context = {"profile":profile}
+    return render(request, 'profile.html', context)
 
 @login_required(login_url='landing')
 def editprofile(request):
@@ -105,6 +107,7 @@ def forum(request):
 @login_required(login_url='landing')
 def listings(request):
     profiles = Profile.objects.all()
+    print(profiles[0].user.id)
     context = {'profiles': profiles}
     return render(request, 'listings.html', context)
 

@@ -26,48 +26,22 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">RC Journey</a>
-      <form class="form-inline my-2 my-lg-0 ml-auto">
-        <input
-          class="form-control mr-sm-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-          Search
-        </button>
-      </form>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'forum' %}">Forum</a>
-        </li>
-      </ul>
-    </nav>
-    <h1>This is the listings page</h1>
-    {% for profile in profiles %}
-    <div class="col-md-4">
-      <img
-        src="{{ profile.profile_image.url }}"
-        alt="{{profile.user.username}}"
-        class="card-img"
-      />
+    <div class="logo1">
+      <a class="navbar-brand" href="#">Profile Listings</a>
     </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{ profile.user.username }}</h5>
-        <p class="card-text">{{ profile.bio }}</p>
-        <p class="card-text">
-          <small class="text-muted"
-            >Date Joined: {{ profile.user.date_joined|date:"M d, Y" }}</small
-          >
-        </p>
+    <div class="container">
+    {% for profile in profiles %}
+    <div class="card-container">
+      <div class="left"><img src="{{profile.profile_image.url}}" alt="{{profile.user.username}}" width="200px" height="200px">
+      </div>
+      <div class="right">
+        <h3>{{profile.user.username}}</h3>
+        <p>{{profile.bio}}</p>
+        <p class="datejoined">Date Joined: {{profile.user.date_joined|date:"M d, Y"}}
       </div>
     </div>
+    <br>
     {% endfor %}
+    </div>
   </body>
 </html>
