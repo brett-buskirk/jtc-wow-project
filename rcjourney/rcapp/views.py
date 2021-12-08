@@ -62,8 +62,9 @@ def loginPage(request):
 def profile(request, pk):
     profile = Profile.objects.get(user_id=pk)
     # profile = Profile.objects.get(profile)
-    context = {"profile":profile}
+    context = {"profile": profile}
     return render(request, 'profile.html', context)
+
 
 @login_required(login_url='landing')
 def editprofile(request):
@@ -78,19 +79,14 @@ def forum(request):
     if request.method == 'GET':
         form = PostForm()
         posts = Post.objects.all().order_by('-date_created')
+        post_filter = PostFilter(request.GET, queryset=posts)
+        posts = post_filter.qs
+        paginate_posts = Paginator(posts, 2)
         page = request.GET.get('page', 1)
-        paginator = Paginator(posts, 2)  # changes the number of posts per page
-        # postFilter = PostFilter(request.GET, queryset=posts)
-        # paginator = postFilter.qs
+        posts_page_obj = paginate_posts.get_page(page)
 
-        try:
-            posts = paginator.page(page)
-        except PageNotAnInteger:
-            posts = paginator.page(1)
-        except EmptyPage:
-            posts = paginator.page(paginator.num_pages)
-
-        context = {'form': form, 'posts': posts}
+        context = {'form': form,
+                   'post_filter': post_filter, 'posts_page_obj': posts_page_obj}
         return render(request, 'forum.html', context)
     if request.method == 'POST':
         form = PostForm(request.POST)
