@@ -84,7 +84,8 @@ def forum(request):
                 tags = form.cleaned_data.get('tags')
                 forum_post = Post(post=post, user_id=request.user)
                 forum_post.save()
-                forum_post.tags.set(tags)
+                for tag in tags:
+                    forum_post.tags.add(tag)
     return HttpResponseRedirect(reverse('forum'))
 
 
