@@ -59,12 +59,13 @@
     </div>
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{ profile.user.username }}</h5>
+        <a href="{% url 'profile' pk=profile.user.id %}"class="card-title">{{ profile.user.username }}</a>
         <p class="card-text">{{ profile.bio }}</p>
         <p class="card-text">
           <small class="text-muted"
             >Date Joined: {{ profile.user.date_joined|date:"M d, Y" }}</small
           >
+          <small>user id: {{ profile.user.id }}</small>
         </p>
       </div>
     </div>
