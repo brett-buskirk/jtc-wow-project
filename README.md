@@ -26,3 +26,25 @@ Now move into the `rcjourney` directory and start the server:
   cd rcjourney
   python manage.py runserver
 ```
+
+---
+
+## Database Concerns ##
+
+The database is not tracked by version control. Instead we can dump local data into an SQL file that can then be committed and shared across the team. This frees up each individual member to utilize test data when building. Once were ready to deploy, we can use one set of data to be exported to all the applications.
+
+To dump the database, use the following commands:
+
+```bash
+  python manage.py dbshell
+  sqlite> .output db.dump.sql
+  sqlite> .dump
+  sqlite> .exit
+```
+
+To create and import the data, we must first remove the existing `db.sqlite3` if any, then run the following commands:
+
+```bash
+  python manage.py dbshell
+  sqlite> .read db.dump.sql
+```
