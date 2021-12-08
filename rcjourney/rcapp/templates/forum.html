@@ -67,6 +67,18 @@
         </form>
       </div>
     </div>
+    <hr />
+    <div class="row">
+      <div class="col">
+        <div class="card card-body">
+          <form method="GET">
+            {{ postFilter.form }}
+            <button type="submit" class="btn btn-primary">Search</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr />
     {% for post in posts %}
     <div class="card my-3 mx-auto" style="max-width: 540px">
       <div class="row no-gutters">
@@ -87,12 +99,52 @@
             <p class="card-text">{{ tag.name }}</p>
             {% endfor %}
             <p class="card-text">
-              <small class="text-muted">{{ post.date_created }}</small>
+              <small class="text-muted"
+                >{{ post.date_created|date:"M d, Y" }}</small
+              >
             </p>
           </div>
         </div>
       </div>
     </div>
     {% endfor %}
+    <br />
+    {% if posts.has_other_pages %}
+    <ul class="pagination justify-content-center">
+      {% if posts.has_previous %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ posts.previous_page_number }}"
+          >&laquo;</a
+        >
+      </li>
+      {% else %}
+      <li class="disabled page-item">
+        <a class="page-link" href="#">&laquo;</a>
+      </li>
+      {% endif %}
+      <br />
+      {% for i in posts.paginator.page_range %} {% if posts.number == i %}
+      <li class="disabled page-item">
+        <a class="page-link" href="#"
+          >{{ i }} <span class="sr-only">(current)</span></a
+        >
+      </li>
+      {% else %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+      </li>
+      {% endif %} {% endfor %} {% if posts.has_next %}
+      <li class="page-item">
+        <a class="page-link" href="?page={{ posts.next_page_number }}"
+          >&raquo;</a
+        >
+      </li>
+      {% else %}
+      <li class="disabled page-item">
+        <a class="page-link" href="#">&raquo;</a>
+      </li>
+      {% endif %}
+    </ul>
+    {% endif %}
   </body>
 </html>
