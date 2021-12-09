@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from taggit.managers import TaggableManager
+# from taggit.managers import TaggableManager
 
 User = get_user_model()
 
@@ -27,7 +27,7 @@ class Tag(models.Model):
 
 class Post(models.Model):
     post_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(Profile, on_delete=models.CASCADE)
     post = models.TextField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now=True, null=True,)
-    tags = TaggableManager()
+    tags = models.ManyToManyField(Tag)
