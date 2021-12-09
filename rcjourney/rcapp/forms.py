@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserChangeForm, UserCreationForm
 from django import forms
 from django.contrib.auth.models import User
 from .models import *
+from taggit.forms import TagField
 
 
 class CreateUserForm(UserCreationForm):
@@ -26,8 +27,10 @@ class EditProfileForm(ModelForm):
 
 class PostForm(forms.Form):
     post = forms.CharField(widget=forms.Textarea, required=True)
-    choices = []
-    for tag in Tag.objects.all():
-        choices.append((tag.tag_id, tag.name))
-    tags = forms.MultipleChoiceField(
-        widget=forms.CheckboxSelectMultiple, choices=choices, required=True)
+    # #tag = forms.CharField(widget=forms.CharField)
+    # choices = []
+    # for tag in Tag.objects.all():
+    #     choices.append((tag.tag_id, tag.name))
+    # tags = forms.MultipleChoiceField(
+    #     widget=forms.CheckboxSelectMultiple, choices=choices, required=True)
+    tags = TagField(label="Tags")
