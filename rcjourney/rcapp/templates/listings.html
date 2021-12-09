@@ -35,7 +35,8 @@
       <div class="left"><img src="{{profile.profile_image.url}}" alt="{{profile.user.username}}" width="200px" height="200px">
       </div>
       <div class="right">
-        <h3>{{profile.user.username}}</h3>
+        <!--<h3>{{profile.user.username}}</h3>-->
+        <a href=“{% url ‘profile’ pk=profile.user.id %}“class=“card-title”>{{ profile.user.username }}</a>
         <p>{{profile.bio}}</p>
         <p class="datejoined">Date Joined: {{profile.user.date_joined|date:"M d, Y"}}
       </div>
