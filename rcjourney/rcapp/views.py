@@ -4,10 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .forms import CreateUserForm, PostForm, EditProfileForm
 from .models import *
+from .filters import PostFilter
 
 
 # Create your views here.
@@ -60,8 +62,9 @@ def loginPage(request):
 def profile(request, pk):
     profile = Profile.objects.get(user_id=pk)
     # profile = Profile.objects.get(profile)
-    context = {"profile":profile}
+    context = {"profile": profile}
     return render(request, 'profile.html', context)
+
 
 @login_required(login_url='landing')
 def editprofile(request):
@@ -76,7 +79,14 @@ def forum(request):
     if request.method == 'GET':
         form = PostForm()
         posts = Post.objects.all().order_by('-date_created')
-        context = {'form': form, 'posts': posts}
+        post_filter = PostFilter(request.GET, queryset=posts)
+        posts = post_filter.qs
+        paginate_posts = Paginator(posts, 2)
+        page = request.GET.get('page', 1)
+        posts_page_obj = paginate_posts.get_page(page)
+
+        context = {'form': form,
+                   'post_filter': post_filter, 'posts_page_obj': posts_page_obj}
         return render(request, 'forum.html', context)
     if request.method == 'POST':
         form = PostForm(request.POST)
@@ -84,7 +94,7 @@ def forum(request):
             if 'create' in request.POST:
                 post = form.cleaned_data.get('post')
                 tags = form.cleaned_data.get('tags')
-                forum_post = Post(post=post, user_id=request.user)
+                forum_post = Post(post=post, user_id=request.user.profile)
                 forum_post.save()
                 for tag in tags:
                     forum_post.tags.add(tag)
