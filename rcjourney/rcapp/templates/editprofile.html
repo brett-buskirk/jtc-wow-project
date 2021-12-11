@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 {% load static %}
+{% block content %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -34,6 +36,61 @@
         </li>
       </ul>
     </nav>
-    <h1>This is the edit profile page</h1>
+    <h1>This is the edit profile page</h1><div class="col-md-4">
+      <img src="{{ user.profile.profile_image.url }}" alt="{{profile.user.username}}"
+        class="card-img" />
+    </div>
+    <div class="col-md-8">
+    <small>{{ profile.user.username }}</small>
+      <div class="card-body">
+        <h5 class="card-title">{{ user }}</h5>
+        <!-- <p class="card-text">{{ user.profile.bio }}</p> -->
+        <!-- <p class="card-text">
+          <small class="text-muted">Date Joined: {{ profile.user.date_joined|date:"M
+            d, Y" }}</small>
+        </p> -->
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.user_id.user.username }}</h5>
+    
+          <p class="card-text">{{ post.post }}</p>
+          {% for tag in post.tags.all %}
+          <p class="card-text">{{ tag.name }}</p>
+          {% endfor %}
+          <p class="card-text">
+            <small class="text-muted">{{ post.date_created }}</small>
+          </p>
+        </div>
+      </div>
+    </div> 
+    <!-- ----------------------------------------------------------------------- -->
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card-body">
+          <a class="btn btn-warning"> Back to
+            Profile</a>
+          <hr>
+          <h3 style="text-align: center">Account Settings</h3>
+          <hr>
+         
+      
+        </div>
+      </div>
+      <div class="col-md-9">
+        <div class="card card-body">
+    
+          <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">{{form}}</fieldset>
+            <input class="btn btn-primary" type="submit" name="Update Information">
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    {% endblock %}
+    
+
   </body>
 </html>
