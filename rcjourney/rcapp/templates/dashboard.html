@@ -34,7 +34,7 @@
 </p>
 <br>
 <p>
-        <a href="{% url 'editprofile' %}">Edit
+        <a href="{% url 'editprofile' request.user.id %}" class="card-title">Edit
           Profile</a>
 </p>
 <br>
