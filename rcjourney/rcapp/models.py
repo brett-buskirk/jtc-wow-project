@@ -18,16 +18,18 @@ class Profile(models.Model):
 # TODO add tag model
 
 
-class Tag(models.Model):
-    tag_id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=255)
+# class Tag(models.Model):
+#     tag_id = models.AutoField(primary_key=True)
+#     name = models.CharField(max_length=255)
 
 # TODO add post model
 
 
 class Post(models.Model):
     post_id = models.AutoField(primary_key=True)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     post = models.TextField(blank=True, null=True)
     date_created = models.DateTimeField(auto_now=True, null=True,)
-    tags = TaggableManager()
+    # tags = models.ManyToManyField(Tag)
+    tags=TaggableManager()
+

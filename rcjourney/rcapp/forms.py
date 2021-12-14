@@ -19,15 +19,15 @@ class EditProfileForm(ModelForm):
         fields = '__all__'
         exclude = ['user']
 
-# class PostForm(ModelForm):
-#     class Meta:
-#         model = Post
-#         fields = ['post', 'tags']
+class PostForm(ModelForm):
+    class Meta:
+        model = Post
+        fields = ['post', 'tags']
 
 
 class PostForm(forms.Form):
     post = forms.CharField(widget=forms.Textarea, required=True)
-    # #tag = forms.CharField(widget=forms.CharField)
+    #tag = forms.CharField(widget=forms.CharField)
     # choices = []
     # for tag in Tag.objects.all():
     #     choices.append((tag.tag_id, tag.name))

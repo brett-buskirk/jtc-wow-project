@@ -26,10 +26,25 @@
   </head>
 
   <body>
-    {% load rcapp_extras %}
+    {% comment %}{% load rcapp_extras %}{% endcomment %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">RC Journey</a>
-      <form class="form-inline my-2 my-lg-0 ml-auto"></form>
+      <form
+        class="form-inline my-2 my-lg-0 ml-auto"
+        method="GET"
+        action="{% url 'search' %}"
+      >
+        <input
+          class="form-control mr-sm-2"
+          type="search"
+          name="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+          Search
+        </button>
+      </form>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
           <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
@@ -58,12 +73,12 @@
         </form>
       </div>
     </div>
-    <hr />
+    <!-- <hr />
     <div class="row">
       <div class="col col-md-8 mx-auto">
         <div class="card card-body">
           <form method="GET">
-            {{ post_filter.form.as_p }}
+            {% comment %}{{ post_filter.form.as_p }}{% endcomment %}
             <input
               type="submit"
               class="btn btn-primary"
@@ -74,8 +89,66 @@
         </div>
       </div>
     </div>
-    <hr />
-    {% for post in posts_page_obj %}
+    <hr /> -->
+    {% comment %}{% for post in posts_page_obj %}{% endcomment %}
+    {% if search%}
+    {% if posts%}<div
+      style="
+        margin: 0 auto;
+        margin-top: 20px;
+        max-width: 540px;
+        height: 50px;
+        line-height: 50px;
+        background-color: darkorange;
+        font-size: 1.5em;
+        text-align: center;
+      "
+    > 
+      Your search returned following results:
+
+    
+    </div>{% endif%}
+    {% for post in posts %}
+    <div class="card my-3 mx-auto" style="max-width: 540px">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img
+            src="{{ post.user_id.profile_image.url }}"
+            alt="{{ post.user_id.user.username }}"
+            class="card-img"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.user_id.user.username }}</h5>
+            <p class="card-text">{{ post.post }}</p>
+            <p>Posted by: {{ post.user_id.username }}</p>
+            Tags: {% for tag in post.tags.all %}
+            <a
+              href="{% url 'posts_by_tag' tag.slug %}"
+              style="text-transform: capitalize"
+            >
+              <button
+                type="button"
+                class="btn btn-sm btn-primary text-capitalize p-0"
+              >
+                #{{ tag.name }}
+                <span class="badge badge-light"
+                  >{% for c in tagcount%} {% if c.0 == tag.name%} {{c.1}}
+                  {%endif%} {% endfor%}</span
+                >
+              </button></a
+            >
+            {% endfor %}
+            <p class="card-text">
+              <small class="text-muted">{{ post.date_created }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %} {% else %} {% for post in posts %}
     <div class="card col-md-8 my-3 mx-auto">
       <div class="row no-gutters">
         <div class="col-md-4">
@@ -88,15 +161,30 @@
         </div>
         <div class="col-md-8">
           <div class="card-body">
-            <a
-              href="{% url 'profile' post.user_id.user.id %}"
+            <!-- <a
+              href="{% url 'profile' post.user_id %}"
               class="card-title"
               >{{ post.user_id.user.username }}</a
-            >
+            > -->
 
             <p class="card-text">{{ post.post }}</p>
-            {% for tag in post.tags.all %}
-            <span class="card-text">{{ tag.name }} |</span>
+            Tags: {% for tag in post.tags.all %}
+            <a
+              href="{% url 'posts_by_tag' tag.slug %}"
+              style="text-transform: capitalize"
+            >
+              <button
+                type="button"
+                class="btn btn-sm btn-primary text-capitalize p-0"
+              >
+                #{{ tag.name }}
+                <span class="badge badge-light"
+                  >{% for c in tagcount%} {% if c.0 == tag.name%} {{c.1}}
+                  {%endif%} {% endfor%}</span
+                >
+              </button></a
+            >
+            <!-- <span class="card-text">{{ tag.name }} |</span> -->
             {% endfor %}
             <p class="card-text">
               <small class="text-muted"
@@ -107,8 +195,9 @@
         </div>
       </div>
     </div>
-    {% endfor %}
+    {% endfor %}{% endif %}
     <br />
+    <!-- {% comment %}
     {% if posts_page_obj.has_other_pages %}
     <ul class="pagination justify-content-center">
       {% if posts_page_obj.has_previous %}
@@ -154,5 +243,6 @@
       {% endif %}
     </ul>
     {% endif %}
+    {% endcomment %} -->
   </body>
 </html>

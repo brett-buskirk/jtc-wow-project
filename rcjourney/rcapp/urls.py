@@ -13,5 +13,6 @@ urlpatterns = [
     path('editprofile/', views.editprofile, name='editprofile'),
     path('forum/', views.forum, name='forum'),
     path('listings/', views.listings, name='listings'),
-
+    path('tag/<slug:tag_slug>/',views.forum,name='posts_by_tag'),
+    path('search/',views.forum,name='search'),
 ]
