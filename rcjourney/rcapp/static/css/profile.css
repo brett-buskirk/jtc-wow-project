@@ -1,18 +1,36 @@
-.synopsis{
-    margin-top: 2em;
-}
 body{
-    background-color: lightblue;
+    /* background-color: rgba(34, 17, 8, 0.541); */
+    background-image: url("../images/nature-forest-trees-road-wallpaper-thumb.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
-}
 .container-fluid{
-    padding: 2em;
+    padding: 4em;
+    height: 100%
 }
-#profilepic{
-    margin: 0 3em 0 3em;
+.card{
+    width: 70vw;
 }
-#synopsis{
-    padding-top: 2em;
-    font-size: 1.5em;
+
+.card-img{
+    width: 20em;
+    height: 18em;
 }
+h1{
+    font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: brown;
+    display: inline;
+    padding-left: 3em;
+    
+}
+.post-placeholder{
+    width:70vw;
+    padding: 1em 1.85em 1em 3em;
+    margin: 2em auto 2em auto;
+}
+
+
 

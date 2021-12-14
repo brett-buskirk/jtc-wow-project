@@ -20,25 +20,23 @@
   <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 
-<body class="container-fluid">
-  <div class="logo1">
-    <a class="navbar-brand" href="#">Start Your Journey</a>
+<body class="container-fluid row">
+
+
+  <h1 class="logo1"> Start Your Journey</h1>
+
+  <div class="container">
+    <div class="col-md-4 buttons btn-group-vertical">
+      <a href="{% url 'forum' %}"><button class="forum-button btn-md">
+          <span>Forum</span></button></a>
+      <a href="{% url 'listings' %}"><button
+          class=" listings-button btn-md"><span>Listings</span></button></a>
+      <a href="{% url 'editprofile' request.user.id %}"><button
+          class="editprofile-button btn-md">
+          <span>Edit
+            Profile</span></button></a>
+    </div>
   </div>
-    <div class="navi"> 
-<p>
-        <a href="{% url 'forum' %}">Forum</a>
-</p>
-<br>
-<p>
-        <a href="{% url 'listings' %}">Listings</a>
-</p>
-<br>
-<p>
-        <a href="{% url 'editprofile' request.user.id %}" class="card-title">Edit
-          Profile</a>
-</p>
-<br>
-</div>
 </body>
 
 </html>

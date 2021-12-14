@@ -68,18 +68,14 @@ def profile(request, pk):
 
 @login_required(login_url='landing')
 def editprofile(request, pk):
-        profile = Profile.objects.get(user_id=pk)
-        form = EditProfileForm(instance=profile)
-        if request.method == 'POST':
-            form = EditProfileForm(request.POST,request.FILES,instance=profile)
-            if form.is_valid():
-                form.save()
-        context = {'form':form}
-        return render(request, 'editprofile.html', context)
-
-    
-
-    
+    profile = Profile.objects.get(user_id=pk)
+    form = EditProfileForm(instance=profile)
+    if request.method == 'POST':
+        form = EditProfileForm(request.POST, request.FILES, instance=profile)
+        if form.is_valid():
+            form.save()
+    context = {'form': form}
+    return render(request, 'editprofile.html', context)
 
 
 @login_required(login_url='landing')
@@ -123,7 +119,6 @@ def logoutUser(request):
 
 
 @login_required(login_url='landing')
-
 def dashboard(request):
     print(request.user)
     context = {}
