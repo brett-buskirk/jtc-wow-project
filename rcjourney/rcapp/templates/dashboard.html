@@ -21,23 +21,16 @@
 </head>
 
 <body class="container-fluid">
-  <div class="logo1">
-    <a class="navbar-brand" href="#">Start Your Journey</a>
-  </div>
-    <div class="navi"> 
-<p>
-        <a href="{% url 'forum' %}">Forum</a>
-</p>
-<br>
-<p>
-        <a href="{% url 'listings' %}">Listings</a>
-</p>
-<br>
-<p>
-        <a href="{% url 'editprofile' %}">Edit
-          Profile</a>
-</p>
-<br>
+   <h1 class="logo1"> <a class="navbar-brand" href="#">Start Your Journey</a></h1>
+  <div class="buttons">
+    <a href="{% url 'forum' %}" ><button class="btn-1"><span>FORUM</span></button></a>
+
+    <a href="{% url 'listings' %}"><button class="btn-1"><span>LISTINGS</span></button></a>
+
+    <a href="{% url 'editprofile' %}"><button class="btn-1 editprofile"><span>EDIT PROFILE</span></button></a>
+
+
+
 </div>
 </body>
 
