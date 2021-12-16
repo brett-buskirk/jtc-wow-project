@@ -1,48 +1,166 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans);
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body {
     background: url("/static/images/db-background.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    
 }
 
 .logo1 {
-    text-align: center;
-    width: 75%;
-    height: 150px;
-    line-height: 150px;
-}
-
-.logo1 a {
-    color:brown;
-    font-size: 5em;
+   color:brown;
+    text-align: right;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: absolute;
     text-shadow: 2px 2px 12px #333;
+    font-size: 5em;
+    width: 90vw;
+    margin-top: 10vh;
 }
-
-.navi {
-    text-align: center;
-    width: 100%;
-    height: 400px;
-    margin-top: 50px;
-}
-
-.navi p {
-  display: inline-block;
-}
-
-.navi a {
-    display: block;
-    color:brown;
+.container{
+    margin-top: 10vh;
     position: relative;
-    font-size: 3em;
-    padding: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    transition: ease-in-out 0.2s;
-    cursor: pointer;
+}
+.row{
+    float: right;
+}
+.btn-group-vertical{
+    position: absolute;
+    right: -8em;
 }
 
-.navi a:hover {
-    text-decoration: none;
-    text-shadow: 0 6px 10px rgba(0,0,0,.5), 0 0 6px rgba(0,0,0,.05);
-    transform: scale(1.5);
+
+button{
+  position: relative;
+  border: none;
+  color: brown;
+  font-size: 2em;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  cursor: pointer;
+  margin: 1em;
+  border-radius: 7px;
+  width: 7em;
+  padding: .35em 0 .35em 0
+  
+}
+.btn-md{
+    background-color: rgba(235, 215, 192, 0.89);
+}
+button::before, button::after{
+  content:"";
+  width: 0;
+  height: 2px;
+  position: absolute;
+  transition: all 0.2s linear;
+  background:brown;
+}
+span::before, span::after{
+  content:"";
+  width:2px;
+  height:0;
+  position: absolute;
+  transition: all 0.2s linear;
+  background: brown;
+}
+button:hover::before, button:hover::after{
+  width: 100%;
+}
+button:hover span::before, button:hover span::after{
+  height: 100%;
+}
+/*----- button 1 -----*/
+.forum-button::before, .forum-button::after{
+  transition-delay: 0.2s;
+}
+.forum-button span::before, .forum-button span::after{
+  transition-delay: 0s;
+}
+.forum-button::before{
+  right: 0;
+  top: 0;
+}
+.forum-button::after{
+  left: 0;
+  bottom: 0;
+}
+.forum-button span::before{
+  left: 0;
+  top: 0;
+}
+.forum-button span::after{
+  right: 0;
+  bottom: 0;
+}
+.forum-button:hover::before, .forum-button:hover::after{
+  transition-delay: 0s;
+}
+.forum-button:hover span::before, .forum-button:hover span::after{
+  transition-delay: 0.2s;
+}
+
+/*--- Button 2 -------*/
+
+
+.listings-button::before, .listings-button::after{
+  transition-delay: 0s;
+}
+.listings-button span::before, .listings-buttonspan::after{
+  transition-delay: 0.2s;
+}
+.listings-button::before{
+  right: 0;
+  top: 0;
+}
+.listings-button::after{
+  left: 0;
+  bottom: 0;
+}
+.listings-button span::before{
+  left: 0;
+  top: 0;
+}
+.listings-button span::after{
+  right: 0;
+  bottom: 0;
+}
+.listings-button:hover::before, .listings-button:hover::after{
+  transition-delay: 0.2s;
+}
+.listings-button:hover span::before, .listings-button:hover span::after{
+  transition-delay: 0s;
+}
+
+
+/*----- button 3 -----*/
+.editprofile-button::before, .editprofile-button::after{
+  transition-delay: 0.2s;
+}
+.editprofile-button span::before, .editprofile-button span::after{
+  transition-delay: 0s;
+}
+.editprofile-button::before{
+  right: 0;
+  top: 0;
+}
+.editprofile-button::after{
+  left: 0;
+  bottom: 0;
+}
+.editprofile-button span::before{
+  left: 0;
+  top: 0;
+}
+.editprofile-button span::after{
+  right: 0;
+  bottom: 0;
+}
+.editprofile-button:hover::before, .editprofile-button:hover::after{
+  transition-delay: 0s;
+}
+.editprofile-button:hover span::before, .editprofile-button:hover span::after{
+  transition-delay: 0.2s;
 }
