@@ -5,6 +5,9 @@ body{
     background-size: cover;
     background-attachment: fixed;
 }
+.navbar{
+    background-color: brown;
+}
 
 .container-fluid{
     padding: 4em;
