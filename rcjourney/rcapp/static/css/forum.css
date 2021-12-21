@@ -1,8 +1,91 @@
-body {
-  background-image: url("../images/landing.jpg");
-  background-size: cover;
+body{
+  background-image: url("../images/forum-bg.png");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.navbar{
+  background-color: brown;
+}
+.container-fluid{
+    height: 100%;
+    margin-top: 5em;
+}
+img{
+   height: 34vh;
+   width: 40vw;
+}
+.post-card{
+  background-color: black;
+
+}
+form{
+  color:black;
+  
+}
+h1{
+  color: brown
+}
+/* h3{
+  color: brown
+} */
+p{
+  font-size: 2em;
 }
 
-h1 {
-  text-align: center;
+
+textarea{
+  width: 40vw;
+  height: 35vh;
+  margin-top: -1.80em;
+  background-color: blanchedalmond;
+}
+.quote-image{
+   width: 40vw;
+  height: 35vh;
+}
+#id_tags{
+  color: brown;
+}
+.post_form, label{
+  color:brown;
+}
+#search-form label{
+width: 7em;
+/* font-size: 2em; */
+color: brown;
+}
+#search-form input{
+width: 8em;
+
+}
+#search-form select{
+width: 8em;
+
+}
+
+.forum-images {
+background-color: brown;
+padding: 10em;
+};
+
+.search-for-post-card {
+margin-top: 15em;
+
+}
+.search-for-post-card{
+  background-color: black;
+}
+hr{
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+.user-img{
+  
+  width: 15em;
+  height: 25em;
+}
+.all-posts-card{
+  margin: 1em;
+  padding: 5em;
+  background-color: brown;
 }
