@@ -30,6 +30,10 @@ def registerPage(request):
             form = CreateUserForm(request.POST)
             if form.is_valid():
                 form.save()
+                new_user = User.objects.get(
+                    username=form.cleaned_data.get('username'))
+                new_profile = Profile(user=new_user)
+                new_profile.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
                 return redirect('login')
