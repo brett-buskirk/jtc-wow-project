@@ -30,6 +30,10 @@ def registerPage(request):
             form = CreateUserForm(request.POST)
             if form.is_valid():
                 form.save()
+                new_user = User.objects.get(
+                    username=form.cleaned_data.get('username'))
+                new_profile = Profile(user=new_user)
+                new_profile.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account was created for ' + user)
                 return redirect('login')
@@ -61,8 +65,12 @@ def loginPage(request):
 @login_required(login_url='landing')
 def profile(request, pk):
     profile = Profile.objects.get(user_id=pk)
-    # profile = Profile.objects.get(profile)
-    context = {"profile": profile}
+    posts = Post.objects.all().order_by(
+        '-date_created').filter(user_id=profile.user.id)
+    paginate_posts = Paginator(posts, 2)
+    page = request.GET.get('page', 1)
+    posts_page_obj = paginate_posts.get_page(page)
+    context = {"profile": profile, "posts": posts_page_obj}
     return render(request, 'profile.html', context)
 
 
@@ -92,13 +100,15 @@ def forum(request):
         context = {'form': form,
                    'post_filter': post_filter, 'posts_page_obj': posts_page_obj}
         return render(request, 'forum.html', context)
+
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
             if 'create' in request.POST:
                 post = form.cleaned_data.get('post')
                 tags = form.cleaned_data.get('tags')
-                forum_post = Post(post=post, user_id=request.user.profile)
+                forum_post = Post(
+                    post=post, user_id=request.user.profile)
                 forum_post.save()
                 for tag in tags:
                     forum_post.tags.add(tag)
