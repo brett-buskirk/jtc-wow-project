@@ -19,22 +19,27 @@
   <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
 </head>
 
-<body class="container-fluid row">
-
-
-  <h1 class="logo1"> Start Your Journey</h1>
-
-  <div class="container">
-    <div class="col-md-4 buttons btn-group-vertical">
-      <a href="{% url 'forum' %}"><button class="forum-button btn-md">
-          <span>Forum</span></button></a>
-      <a href="{% url 'listings' %}"><button
-          class=" listings-button btn-md"><span>Listings</span></button></a>
-      <a href="{% url 'editprofile' request.user.id %}"><button
-          class="editprofile-button btn-md">
-          <span>Edit
-            Profile</span></button></a>
+<body>
+  <div class="container-fluid row">
+    <div class="col-6"></div>
+    <div class="col-6">
+      <h1 class="text-center slug display-3"> Start Your Journey</h1>
+      <div class="buttons btn-group-vertical">
+        <a href="{% url 'forum' %}">
+          <button class="dashboard-btn btn-md"><span>Forum</span></button>
+        </a>
+        <a href="{% url 'listings' %}">
+          <button class="dashboard-btn btn-md"><span>Listings</span></button>
+        </a>
+        <a href="{% url 'editprofile' request.user.id %}">
+          <button class="dashboard-btn btn-md"><span>Edit Profile</span></button>
+        </a>
+        <a href="{% url 'logout' %}">
+          <button class="dashboard-btn btn-md"><span>Logout</span></button>
+        </a>
+      </div>
     </div>
+
   </div>
 </body>
 

@@ -6,161 +6,96 @@
 }
 
 body {
-    background: url("/static/images/db-background.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    
+  background: url("/static/images/db-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.logo1 {
-   color:brown;
-    text-align: right;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 2px 2px 12px #333;
-    font-size: 5em;
-    width: 90vw;
-    margin-top: 10vh;
-}
-.container{
-    margin-top: 10vh;
-    position: relative;
-}
-.row{
-    float: right;
-}
-.btn-group-vertical{
-    position: absolute;
-    right: -8em;
+.slug {
+  margin-top: 150px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+.btn-group-vertical {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
 
-button{
+button {
   position: relative;
   border: none;
-  color: brown;
+  color: #065665;
   font-size: 2em;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   cursor: pointer;
-  margin: 1em;
+  margin: 10px;
   border-radius: 7px;
   width: 7em;
   padding: .35em 0 .35em 0
-  
 }
-.btn-md{
-    background-color: rgba(235, 215, 192, 0.89);
+
+.btn-md {
+  background-color: #84e4f7e3;
 }
-button::before, button::after{
+
+button::before, button::after {
   content:"";
   width: 0;
   height: 2px;
   position: absolute;
   transition: all 0.2s linear;
-  background:brown;
+  background:#065665;
 }
-span::before, span::after{
+
+span::before, span::after {
   content:"";
   width:2px;
   height:0;
   position: absolute;
   transition: all 0.2s linear;
-  background: brown;
+  background: #065665;
 }
-button:hover::before, button:hover::after{
+
+button:hover::before, button:hover::after {
   width: 100%;
 }
-button:hover span::before, button:hover span::after{
+
+button:hover span::before, button:hover span::after {
   height: 100%;
 }
-/*----- button 1 -----*/
-.forum-button::before, .forum-button::after{
-  transition-delay: 0.2s;
-}
-.forum-button span::before, .forum-button span::after{
-  transition-delay: 0s;
-}
-.forum-button::before{
-  right: 0;
-  top: 0;
-}
-.forum-button::after{
-  left: 0;
-  bottom: 0;
-}
-.forum-button span::before{
-  left: 0;
-  top: 0;
-}
-.forum-button span::after{
-  right: 0;
-  bottom: 0;
-}
-.forum-button:hover::before, .forum-button:hover::after{
-  transition-delay: 0s;
-}
-.forum-button:hover span::before, .forum-button:hover span::after{
+
+.dashboard-btn::before, .dashboard-btn::after {
   transition-delay: 0.2s;
 }
 
-/*--- Button 2 -------*/
-
-
-.listings-button::before, .listings-button::after{
-  transition-delay: 0s;
-}
-.listings-button span::before, .listings-buttonspan::after{
-  transition-delay: 0.2s;
-}
-.listings-button::before{
-  right: 0;
-  top: 0;
-}
-.listings-button::after{
-  left: 0;
-  bottom: 0;
-}
-.listings-button span::before{
-  left: 0;
-  top: 0;
-}
-.listings-button span::after{
-  right: 0;
-  bottom: 0;
-}
-.listings-button:hover::before, .listings-button:hover::after{
-  transition-delay: 0.2s;
-}
-.listings-button:hover span::before, .listings-button:hover span::after{
+.dashboard-btn span::before, .dashboard-btn span::after {
   transition-delay: 0s;
 }
 
+.dashboard-btn::before {
+  right: 0;
+  top: 0;
+}
 
-/*----- button 3 -----*/
-.editprofile-button::before, .editprofile-button::after{
-  transition-delay: 0.2s;
-}
-.editprofile-button span::before, .editprofile-button span::after{
-  transition-delay: 0s;
-}
-.editprofile-button::before{
-  right: 0;
-  top: 0;
-}
-.editprofile-button::after{
+.dashboard-btn::after {
   left: 0;
   bottom: 0;
 }
-.editprofile-button span::before{
+
+.dashboard-btn span::before{
   left: 0;
   top: 0;
 }
-.editprofile-button span::after{
+.dashboard-btn span::after {
   right: 0;
   bottom: 0;
 }
-.editprofile-button:hover::before, .editprofile-button:hover::after{
+
+.dashboard-btn:hover::before, .dashboard-btn:hover::after {
   transition-delay: 0s;
 }
-.editprofile-button:hover span::before, .editprofile-button:hover span::after{
+
+.dashboard-btn:hover span::before, .dashboard-btn:hover span::after {
   transition-delay: 0.2s;
 }
