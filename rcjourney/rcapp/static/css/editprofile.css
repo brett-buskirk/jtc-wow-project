@@ -1,23 +1,13 @@
-/* .container-fluid{
-    padding: 4em;
+img {
+    min-width: 10%;
+    min-height: 40%;
+    vertical-align: middle;
+    border-style: none;
+    position: absolute;
+    top: 5em;
+    left: 8em;
+    height: 3em;
 }
-.card{
-    width: 70vw;
+#profile_image-clear_id, label{
+display: none;
 }
-
-.card-img{
-    width: 20em;
-    height: 18em;
-}
-img{
-    height: 30px;
-}
-
-h1{
-    font-size: 2em;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: brown;
-    display: inline;
-    padding-left: 3em;
-    
-} */
