@@ -35,18 +35,10 @@
 
     </ul>
   </nav>
-  <!-- <div class="container-fluid">
-    <div class="card">
-      <div class="card-header">
-        <h1 class="card-title">Edit Profile For: {{ user }}</h1>
-        <div class="card-body"><img class="card-img"
-            src="{{ user.profile.profile_image.url }}"
-            alt="{{profile.user.username}}" /></div>
-        <div class="card-footer"></div>
 
-      </div>
-    </div>
-  </div> -->
+
+
+
 
   <div class="col-md-8">
     <div class="card-body">
@@ -55,6 +47,8 @@
   </div>
   </div>
   <!-- ----------------------------------------------------------------------- -->
+
+
   <div class="row">
     <div class="col-md-3">
       <div class="card card-body">
@@ -70,9 +64,13 @@
     </div>
     <div class="col-md-9">
       <div class="card card-body">
+
         <form method="POST" action="" enctype="multipart/form-data">
           {% csrf_token %}
+
           <fieldset class="form-group">{{form}}</fieldset>
+          <img class="img" src="{{ user.profile.profile_image.url }}"
+            alt="{{profile.user.username}}" />
           <input class="btn btn-primary" type="submit"
             name="Update Information">
         </form>
