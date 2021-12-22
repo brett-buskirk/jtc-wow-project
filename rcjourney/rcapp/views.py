@@ -64,11 +64,16 @@ def loginPage(request):
 
 @login_required(login_url='landing')
 def profile(request, pk):
+    # get user's profile from the database
     profile = Profile.objects.get(user_id=pk)
+    # get all the posts for that user in the database newest first
     posts = Post.objects.all().order_by(
         '-date_created').filter(user_id=profile.user.id)
-    paginate_posts = Paginator(posts, 2)
+    # set the number of posts per page to 5 in this instance
+    paginate_posts = Paginator(posts, 5)
+    # set the first page
     page = request.GET.get('page', 1)
+    # set the page
     posts_page_obj = paginate_posts.get_page(page)
     context = {"profile": profile, "posts": posts_page_obj}
     return render(request, 'profile.html', context)
@@ -89,12 +94,19 @@ def editprofile(request, pk):
 @login_required(login_url='landing')
 def forum(request):
     if request.method == 'GET':
+        # create a new instance of the post form
         form = PostForm()
+        # get all of the posts from the database ordered newest to oldest
         posts = Post.objects.all().order_by('-date_created')
+        # if the posts are to filtered filter them
         post_filter = PostFilter(request.GET, queryset=posts)
+        # set the posts to the filtered posts
         posts = post_filter.qs
-        paginate_posts = Paginator(posts, 2)
+        # set the number of posts per page to 5 in this instance
+        paginate_posts = Paginator(posts, 5)
+        # set the first page
         page = request.GET.get('page', 1)
+        # set the page
         posts_page_obj = paginate_posts.get_page(page)
 
         context = {'form': form,
