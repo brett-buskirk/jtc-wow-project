@@ -1,4 +1,5 @@
-# RC Journey #
+# <div align="center">Returned Citizen Journey</div>
+## <div align="center">JTC WOW Project</div>
 
 This is the RC Journey project for the JTC WoW project.
 
