@@ -115,14 +115,10 @@
               </a>
               <p class="text-dark">{{ post.post }}</p>
 
-              <div
-                class="border-solid border-secondary border-top row p-3 ml-2"
-              >
+              <div class="border-solid border-secondary border-top row p-3 ml-2">
                 {% for tag in post.tags.all %}
                 <h5 class="mr-2">
-                  <span class="badge badge-pill badge-purple"
-                    >{{ tag.name }}</span
-                  >
+                  <span class="badge badge-pill badge-purple">{{ tag.name }}</span>
                 </h5>
                 {% endfor %}
               </div>
