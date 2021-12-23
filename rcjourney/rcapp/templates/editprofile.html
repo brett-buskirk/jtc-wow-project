@@ -23,59 +23,46 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">RC Journey</a>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <a class="navbar-brand" href="/">RC Journey</a>
+    <form class="form-inline my-2 my-lg-0 ml-auto"></form>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-light" href="{% url 'forum' %}">Forum</a>
+        <a class="nav-link" href="{% url 'forum' %}">Forum</a>
       </li>
-
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'listings' %}">Listings</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      </li>
     </ul>
   </nav>
 
-
-
-
-
-  <div class="col-md-8">
-    <div class="card-body">
-    </div>
-  </div>
-  </div>
-  </div>
-  <!-- ----------------------------------------------------------------------- -->
-
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="card card-body">
-        <a href="{% url 'profile' request.user.id %}" class="btn btn-warning">
-          View My
-          Profile</a>
-        <hr>
-        <h3 style="text-align: center">Account Settings</h3>
-        <hr>
-
-
-      </div>
-    </div>
-    <div class="col-md-9">
+  <div class="container-fluid row mt-5">
+    <div class="col-3"></div>
+    <div class="col-6">
       <div class="card card-body">
 
         <form method="POST" action="" enctype="multipart/form-data">
           {% csrf_token %}
-
           <fieldset class="form-group">{{form}}</fieldset>
-          <img class="img" src="{{ user.profile.profile_image.url }}"
-            alt="{{profile.user.username}}" />
-          <input class="btn btn-primary" type="submit"
-            name="Update Information">
+          <img class="img" src="{{ user.profile.profile_image.url }}" alt="{{profile.user.username}}"/>
+          <input class="btn btn-primary float-right" type="submit" name="Update Information">
         </form>
       </div>
     </div>
+    <div class="col-3"></div>
+  </div>
+  <div class="container-fluid row mt-5 justify-content-center">
+    <a id="view-profile" href="{% url 'profile' user.profile.id %}">
+      <button class="btn btn-profile">
+        View Profile
+      </button>
+    </a>
   </div>
 
   {% endblock %}
