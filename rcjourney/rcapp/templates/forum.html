@@ -46,41 +46,45 @@
       <div class="card post-card">
         <div class="card-header">
           <div class="card-body row p-5">
-            <div class="col pl-5">
+            <div class="col-md-6 my-3">
               <h1 class="text-center">Search Posts</h1>
               <div class="card search-for-post-card">
-                <div class="card-header"></div>
                 <div class="card-body">
-                  <form method="GET" id="search-form" class="container col">
+                  <form method="GET" id="search-form">
                     {{ post_filter.form.as_p }}
                     <div class="text-center">
                       <input
                         type="submit"
-                        class="btn btn-dark border w-25 border-light text-center"
+                        class="
+                          btn btn-dark
+                          border
+                          w-25
+                          border-light
+                          text-center
+                        "
                         name="search"
                         value="Search"
                       />
                     </div>
-
                   </form>
                 </div>
-                <div class="card-footer"></div>
               </div>
             </div>
-            <div class="col pl-4">
+            <div class="col-md-6 my-3">
               <h1 class="text-center">Submit Your Post Here!</h1>
-              <form method="POST" action="" class="post-form">
-                {% csrf_token %} {{form.as_p}}
-                <div class="text-center post-btn">
-                  <input
-                    class="btn btn-dark border border-light w-50"
-                    type="submit"
-                    name="create"
-                    value="Create"
-                  />
-                </div>
-
-              </form>
+              <div class="card-body">
+                <form method="POST" action="" class="post-form">
+                  {% csrf_token %} {{form.as_p}}
+                  <div class="text-center post-btn">
+                    <input
+                      class="btn btn-dark border border-light w-50"
+                      type="submit"
+                      name="create"
+                      value="Create"
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
           <div class="card-footer">
@@ -97,34 +101,37 @@
 
       <div class="card all-posts-card">
         <div class="row no-gutters">
-          <div class="col-md-2">
+          <div class="col-md-3">
             <img
               src="{{ post.user_id.profile_image.url }}"
               alt="{{ post.user_id.user.username }}"
-              class="user-img"
+              class="user-img card-img"
             />
           </div>
-          <div class="col">
+          <div class="col-md-9">
             <div class="card-body">
               <a href="{% url 'profile' post.user_id.user.id %}">
-                <h1 class="text-secondary">
-                  {{ post.user_id.user.username }}
-                </h1>
+                <h1 class="text-secondary">{{ post.user_id.user.username }}</h1>
               </a>
               <p class="text-dark">{{ post.post }}</p>
-   
-              <div class="border-solid border-secondary border-top row p-3 ml-2">
+
+              <div
+                class="border-solid border-secondary border-top row p-3 ml-2"
+              >
                 {% for tag in post.tags.all %}
-                  <h5 class="mr-2"><span class="badge badge-pill badge-purple">{{ tag.name }}</span></h5>
+                <h5 class="mr-2">
+                  <span class="badge badge-pill badge-purple"
+                    >{{ tag.name }}</span
+                  >
+                </h5>
                 {% endfor %}
               </div>
- 
+
               <div class="text-right">
                 <small class="text-muted">
                   {{ post.date_created|date:"M d, Y" }}
                 </small>
               </div>
-
             </div>
           </div>
         </div>
