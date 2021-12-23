@@ -81,7 +81,9 @@
               <form action="{% url 'delete-post' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="post_id" value="{{post.post_id}}">
-                <input type="submit"  class="btn btn-danger btn-sm" value="Delete">
+                {% if current_user == profile.id %}
+                  <input type="submit"  class="btn btn-danger btn-sm" value="Delete">
+                {% endif %}
              </form>
             </div>
           </div>

@@ -75,7 +75,11 @@ def profile(request, pk):
     page = request.GET.get('page', 1)
     # set the page
     posts_page_obj = paginate_posts.get_page(page)
-    context = {"profile": profile, "posts": posts_page_obj}
+    context = {
+      "profile": profile, 
+      "posts": posts_page_obj,
+      "current_user": request.user.profile.id
+    }
     return render(request, 'profile.html', context)
 
 
