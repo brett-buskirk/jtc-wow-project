@@ -1,3 +1,26 @@
+body {
+  background-image: url("../images/sky.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+.navbar {
+  background-color: #8296f7;
+  box-shadow: 0px 3px 10px #333;
+}
+
+.navbar-brand:hover {
+  color: #82f7bd !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #82f7bd !important;
+}
+
 img {
     min-width: 10%;
     min-height: 40%;
@@ -8,6 +31,23 @@ img {
     left: 8em;
     height: 3em;
 }
+
 #profile_image-clear_id, label{
 display: none;
+}
+
+.card {
+  background-color: rgba(130, 247, 189, .63);
+}
+
+.btn-profile {
+  font-size: 25px;
+  color: #7e36fc;
+  border: solid 2px #7e36fc;
+  background-color: transparent;
+}
+
+.btn-profile:hover {
+  background-color: #7e36fc;
+  color: white;
 }
