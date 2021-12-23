@@ -7,11 +7,11 @@ urlpatterns = [
     path('logout/', views.logoutUser, name='logout'),
 
     path('', views.landing, name='landing'),
+    path('delete/', views.delete_post, name='delete-post'),
     path('dashboard/', views.dashboard, name='dashboard'),
 
     path('profile/<str:pk>/', views.profile, name='profile'),
     path('editprofile/<str:pk>/', views.editprofile, name='editprofile'),
     path('forum/', views.forum, name='forum'),
     path('listings/', views.listings, name='listings'),
-
 ]
