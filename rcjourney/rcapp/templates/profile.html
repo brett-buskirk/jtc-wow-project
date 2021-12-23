@@ -33,6 +33,9 @@
         <a class="nav-link" href="{% url 'forum' %}">Forum</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="{% url 'listings' %}">Listings</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="{% url 'logout' %}">Logout</a>
       </li>
     </ul>
@@ -41,7 +44,7 @@
     <div class="card mx-auto" id="profile-card">
       <div class="card-header row border-0">
         <div class="col-2">
-          <img src="{{ profile.profile_image.url }}" alt="{{profile.user.username}}" class="card-img rounded border border-dark" />
+          <img src="{{ profile.profile_image.url }}" alt="{{profile.user.username}}" class="card-img rounded" />
         </div>
         <div class="col-10 my-auto">
           <h1 class="display-1">{{ profile.user.username }}</h1>
@@ -67,7 +70,7 @@
               <p class="text-dark">{{ post.post }}</p>
               <hr/>
               {% for tag in post.tags.all %}
-              <h5 class="mr-2">
+              <h5 class="mr-2 d-inline">
                 <span class="badge badge-pill badge-purple">{{ tag.name }}</span>
               </h5>
               {% endfor %}
