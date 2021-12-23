@@ -1,33 +1,80 @@
-body{background: url("/static/images/listings-bg.jpg") no-repeat; background-size: 100%;}
-.container {width: 100%;
-            height: auto;
-            margin-left: 30%;
-            }
-.card-container {width:800px;
-                 height: 200px;
-                }
-.left {float:left;
-        width: 200px;
-        height: 200px;}
-.right {float:right;
-        width:600px;
-        height: 200px;
-        background-color:rgba(182, 240, 240, .6);
-        text-align: center;
-        position: relative;}
-.datejoined { position:absolute;
-                bottom: 0;
-            margin-left: 200px;
-            margin-bottom: 0px;}
+body {
+  background-image: url("../images/sky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar {
+  background-color: #8296f7;
+  box-shadow: 0px 3px 10px #333;
+}
+
+.navbar-brand:hover {
+  color: #82f7bd !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #82f7bd !important;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+}
+
+.card-container {
+  width: 100%;
+  height: 200px;
+  background-color: #b6f0f099;
+  border-radius: 95px 10px 10px 95px;
+}
+
+.left {
+  float:left;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+.right {
+  float:right;
+  width: 80%;
+  height: 200px;
+  position: relative;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 5px;
+}
+
 .logo1 {
-                text-align: center;
-                width: 75%;
-                height: 150px;
-                line-height: 150px;
-                margin-bottom;: 20px
-            }
-.logo1 a{color:brown;
-                font-size: 72px;
-                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-                position: absolute;
-            }
+  height: 150px;
+  line-height: 150px;
+  margin-top: 30px;
+}
+
+.logo1 h1 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-shadow: 5px 5px 12px #333333a5;
+}
+
+.card-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.left img {
+  border-radius: 100%;
+  height: 180px;
+  width: 180px;
+}
+
+#profile-listing {
+  height: calc(100vh - 56px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

@@ -26,20 +26,40 @@
   </head>
 
   <body>
-    <div class="logo1">
-      <a class="navbar-brand" href="#">Profile Listings</a>
-    </div>
-    <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+      <a class="navbar-brand" href="/">RC Journey</a>
+      <form class="form-inline my-2 my-lg-0 ml-auto"></form>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'forum' %}">Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container" id="profile-listing">
+      <div class="logo1">
+        <h1 class="display-3 text-center">Our Returned Citizens</h1>
+      </div>
     {% for profile in profiles %}
     <div class="card-container">
       <div class="left"><img src="{{profile.profile_image.url}}" alt="{{profile.user.username}}" width="200px" height="200px">
       </div>
       <div class="right">
-        <!--<h3>{{profile.user.username}}</h3>-->
-        <a href="{% url 'profile' pk=profile.user.id %}"class="card-title">{{ profile.user.username }}</a>
-          
+        <div class="card-intro row">
+          <div class="col-6">
+            <a href="{% url 'profile' pk=profile.user.id %}"class="card-title">{{ profile.user.username }}</a>
+          </div class="col-6">
+          <div class="col-6">
+            <span class="datejoined float-right">Joined: {{profile.user.date_joined|date:"M d, Y"}}</span>
+          </div>
+        </div>
         <p>{{profile.bio}}</p>
-        <p class="datejoined">Date Joined: {{profile.user.date_joined|date:"M d, Y"}}
       </div>
     </div>
     <br>

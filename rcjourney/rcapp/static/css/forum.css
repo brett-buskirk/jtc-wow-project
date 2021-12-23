@@ -77,13 +77,13 @@ form.post-form p:nth-child(3) label {
 }
 
 #search-form label {
-  width: 365px;
+  width: 145px;
   color: #84e4f7;
   font-size: 20px;
 }
 
 #search-form input {
-  width: 12em;
+  width: 70%;
   font-size: 20px;
 }
 
@@ -141,4 +141,8 @@ hr {
 .badge-purple {
   background-color: #8296f7;
   color: white;
+}
+
+.post-title {
+  margin-bottom: 27px;
 }

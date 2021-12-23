@@ -4,9 +4,9 @@ from .models import *
 
 
 class PostFilter(django_filters.FilterSet):
-    post = CharFilter(field_name='post', lookup_expr='icontains')
-    start_date = DateFilter(field_name='date_created', lookup_expr='gte')
-    end_date = DateFilter(field_name='date_created', lookup_expr='lte')
+    post = CharFilter(field_name='post', label=('Keyword:'), lookup_expr='icontains')
+    start_date = DateFilter(field_name='date_created', label=('Start Date:'), lookup_expr='gte')
+    end_date = DateFilter(field_name='date_created', label=('End Date:'), lookup_expr='lte')
 
     class Meta:
         model = Post
