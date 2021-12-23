@@ -53,7 +53,7 @@
       <div class="right">
         <div class="card-intro row">
           <div class="col-6">
-            <a href="{% url 'profile' pk=profile.user.id %}"class="card-title">{{ profile.user.username }}</a>
+            <a href="{% url 'profile' pk=profile.id %}"class="card-title">{{ profile.user.username }}</a>
           </div class="col-6">
           <div class="col-6">
             <span class="datejoined float-right">Joined: {{profile.user.date_joined|date:"M d, Y"}}</span>

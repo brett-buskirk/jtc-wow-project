@@ -65,10 +65,10 @@ def loginPage(request):
 @login_required(login_url='landing')
 def profile(request, pk):
     # get user's profile from the database
-    profile = Profile.objects.get(user_id=pk)
+    profile = Profile.objects.get(id=pk)
     # get all the posts for that user in the database newest first
     posts = Post.objects.all().order_by(
-        '-date_created').filter(user_id=profile.user.id)
+        '-date_created').filter(user_id_id=profile.id)
     # set the number of posts per page to 5 in this instance
     paginate_posts = Paginator(posts, 5)
     # set the first page
