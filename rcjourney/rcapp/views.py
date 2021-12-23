@@ -145,3 +145,11 @@ def dashboard(request):
     print(request.user)
     context = {}
     return render(request, 'dashboard.html', context)
+
+
+@login_required(login_url='landing')
+def delete_post(request):
+    if request.method == 'POST':
+        post_id = request.POST.get('post_id', None)
+        Post.objects.get(post_id=post_id).delete()
+        return HttpResponseRedirect(reverse("profile", kwargs={'pk': request.user.profile.id}))
