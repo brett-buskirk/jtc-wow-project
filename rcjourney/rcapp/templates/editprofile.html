@@ -32,23 +32,8 @@
       <li class="nav-item">
         <a class="nav-link text-light" href="{% url 'forum' %}">Forum</a>
       </li>
-
     </ul>
   </nav>
-
-
-
-
-
-  <div class="col-md-8">
-    <div class="card-body">
-    </div>
-  </div>
-  </div>
-  </div>
-  <!-- ----------------------------------------------------------------------- -->
-
-
   <div class="row">
     <div class="col-md-3">
       <div class="card card-body">
@@ -58,16 +43,12 @@
         <hr>
         <h3 style="text-align: center">Account Settings</h3>
         <hr>
-
-
       </div>
     </div>
     <div class="col-md-9">
       <div class="card card-body">
-
         <form method="POST" action="" enctype="multipart/form-data">
           {% csrf_token %}
-
           <fieldset class="form-group">{{form}}</fieldset>
           <img class="img" src="{{ user.profile.profile_image.url }}"
             alt="{{profile.user.username}}" />
@@ -76,11 +57,22 @@
         </form>
       </div>
     </div>
+    <h3>Pick a post you would like to delete:</h3>
+  </div><br>
+  {% for post in posts %}
+  <div>
+    <form method="POST" action="" enctype="multipart/form-data">
+      {% csrf_token %}
+      <!-- <fieldset class="form-group">{{ form }}</fieldset> -->
+      <p>{{ post.post }}</p>
+      <button class="btn btn-default btn-danger" name="delete"
+        type="submit">Delete Post</button>
+    </form>
+    </p>
   </div>
-
+  </div>
+  {% endfor %}
   {% endblock %}
-
-
 </body>
 
 </html>

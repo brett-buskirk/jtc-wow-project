@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('profile/<str:pk>/', views.profile, name='profile'),
     path('editprofile/<str:pk>/', views.editprofile, name='editprofile'),
+    path('editprofile/<str:pk>/', views.editprofile, name='deletepost'),
     path('forum/', views.forum, name='forum'),
     path('listings/', views.listings, name='listings'),
 

@@ -82,12 +82,17 @@ def profile(request, pk):
 @login_required(login_url='landing')
 def editprofile(request, pk):
     profile = Profile.objects.get(user_id=pk)
+    posts = Post.objects.all().order_by(
+        '-date_created').filter(user_id=profile.user.id)
+    paginate_posts = Paginator(posts, 5)
+    page = request.GET.get('page', 1)
+    posts_page_obj = paginate_posts.get_page(page)
     form = EditProfileForm(instance=profile)
     if request.method == 'POST':
         form = EditProfileForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():
             form.save()
-    context = {'form': form}
+    context = {'form': form, "posts": posts_page_obj}
     return render(request, 'editprofile.html', context)
 
 
