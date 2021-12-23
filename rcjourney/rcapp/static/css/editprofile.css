@@ -51,3 +51,7 @@ display: none;
   background-color: #7e36fc;
   color: white;
 }
+
+textarea {
+  width: 50%;
+}
