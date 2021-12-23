@@ -1,39 +1,65 @@
-body{
-    /* background-color: rgba(34, 17, 8, 0.541); */
-    background-image: url("../images/nature-forest-trees-road-wallpaper-thumb.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-.navbar{
-    background-color: brown;
+body {
+  background-color: #d8f2ff;
 }
 
-.container-fluid{
-    padding: 4em;
-    height: 100%
-}
-.card{
-    width: 70vw;
+.navbar {
+  background-color: #8296f7;
+  box-shadow: 0px 3px 10px #333;
 }
 
-.card-img{
-    width: 20em;
-    height: 18em;
+.navbar-brand:hover {
+  color: #82f7bd !important;
 }
-h1{
-    font-size: 2em;
+
+.nav-link {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #82f7bd !important;
+}
+
+.container-fluid {
+  padding: 2em;
+  height: 100%
+}
+
+.card {
+  width: 70vw;
+}
+
+#profile-card {
+  background-color: #84e4f7;
+  background-image: url(../images/sky.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+}
+
+.card-img {
+  width: 150px;
+  height: 150px;
+}
+
+h1 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: brown;
-    display: inline;
-    padding-left: 3em;
-    
-}
-.post-placeholder{
-    width:70vw;
-    padding: 1em 1.85em 1em 3em;
-    margin: 2em auto 2em auto;
+  color: white;
+  text-shadow: 0 0 20px black;
 }
 
+.card-header {
+  background-color: transparent;
+}
 
+.badge-purple {
+  background-color: #8296f7;
+  color: white;
+}
 
+.all-posts-card {
+  background-color: #82f7bd;
+}
+
+hr {
+  margin-bottom: 5px;
+}
