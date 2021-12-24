@@ -1,143 +1,143 @@
 body {
-  background-color: #d8f2ff;
+    background-color: #d8f2ff;
 }
 
 .navbar {
-  background-color: #8296f7;
-  box-shadow: 0px 3px 10px #333;
+    background-color: #8296f7;
+    box-shadow: 0px 3px 10px #333;
 }
 
 .navbar-brand:hover {
-  color: #82f7bd !important;
+    color: #82f7bd !important;
 }
 
 .nav-link {
-  color: white !important;
+    color: white !important;
 }
 
 .nav-link:hover {
-  color: #82f7bd !important;
+    color: #82f7bd !important;
 }
 
 .container-fluid {
-  height: 100%;
-  margin-top: 2em;
+    height: 100%;
+    margin-top: 2em;
 }
 
 .post-card {
-  background-color: #84e4f7;
-  background-image: url(../images/sky.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 8px;
+    background-color: #84e4f7;
+    background-image: url(../images/sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
 }
 
 form {
-  color: black;
+    color: black;
 }
 
 h1 {
-  color: white;
-  text-shadow: 0 0 20px black;
+    color: white;
+    text-shadow: 0 0 20px black;
 }
 
 p {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 textarea {
-  width: 40vw;
-  height: 35vh;
-  margin-top: -1.8em;
-  background-color: blanchedalmond;
+    width: 40vw;
+    height: 35vh;
+    margin-top: -1.8em;
+    background-color: blanchedalmond;
 }
 
 .quote-image {
-  width: 40vw;
-  height: 35vh;
-  border: 3px double black;
+    width: 40vw;
+    height: 35vh;
+    border: 3px double black;
 }
 
 #id_tags {
-  color: black;
+    color: black;
 }
 
 #id_tags li {
-  display: inline;
-  margin-right: 10px;
+    display: inline;
+    margin-right: 10px;
 }
 
 form.post-form p:nth-child(3) label {
-  display: none;
+    display: none;
 }
 
 #search-form label {
-  width: 145px;
-  color: #84e4f7;
-  font-size: 20px;
+    width: 145px;
+    color: #84e4f7;
+    font-size: 20px;
 }
 
 #search-form input {
-  width: 70%;
-  font-size: 20px;
+    width: 70%;
+    font-size: 20px;
 }
 
 #search-form select {
-  width: 8em;
+    width: 8em;
 }
 
 .forum-images {
-  padding: 10em;
+    padding: 10em;
 }
 
 .search-for-post-card {
-  background-color: black;
+    background-color: black;
 }
 
 hr.separator {
-  margin-top: 3em;
-  margin-bottom: 3em;
+    margin-top: 3em;
+    margin-bottom: 3em;
 }
 
 .user-img {
-  border-radius: 100%;
-  width: 200px;
-  height: 200px;
-  box-shadow: 0px 0px 12px #333333aa;
+    border-radius: 100%;
+    width: 200px;
+    height: 200px;
+    box-shadow: 0px 0px 12px #333333aa;
 }
 
 .all-posts-card {
-  margin: 1em;
-  padding: 1em;
-  background-color: #82f7bd;
+    margin: 1em;
+    padding: 1em;
+    background-color: #82f7bd;
 }
 
 .card-footer p {
-  color: black;
-  font-style: oblique;
-  margin-bottom: 0px;
+    color: black;
+    font-style: oblique;
+    margin-bottom: 0px;
 }
 
 .post-btn input {
-  background-color: #8296f7;
-  border: thin solid black !important;
+    background-color: #8296f7;
+    border: thin solid black !important;
 }
 
 .card-body a h1 {
-  display: inline-block;
-  text-shadow: none;
-  color: #8296f7 !important;
+    display: inline-block;
+    text-shadow: none;
+    color: #8296f7 !important;
 }
 
 .card-body a h1:hover {
-  color: white !important;
+    color: white !important;
 }
 
 .badge-purple {
-  background-color: #8296f7;
-  color: white;
+    background-color: #8296f7;
+    color: white;
 }
 
 .post-title {
-  margin-bottom: 27px;
+    margin-bottom: 27px;
 }

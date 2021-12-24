@@ -6,12 +6,14 @@ from django.contrib.auth.models import User
 from .models import *
 
 
+# User Form for creating new users
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']
 
 
+# Edit Profile Form for allowing a user to edit their profile
 class EditProfileForm(ModelForm):
     class Meta:
         model = Profile
@@ -19,16 +21,10 @@ class EditProfileForm(ModelForm):
         exclude = ['user']
 
 
-class PostForm(ModelForm):
-    class Meta:
-        model = Post
-        fields = ['post', 'tags']
-
-
+# Post Form for users to post content in the Forum
 class PostForm(forms.Form):
     post = forms.CharField(widget=forms.Textarea, required=True)
     choices = []
     for tag in Tag.objects.all():
         choices.append((tag.tag_id, tag.name))
-    tags = forms.MultipleChoiceField(
-        widget=forms.CheckboxSelectMultiple, choices=choices, required=True)
+    tags = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple, choices=choices, required=False)

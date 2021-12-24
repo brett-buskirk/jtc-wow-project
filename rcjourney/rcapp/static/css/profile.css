@@ -1,79 +1,79 @@
 body {
-  background-color: #d8f2ff;
+    background-color: #d8f2ff;
 }
 
 .navbar {
-  background-color: #8296f7;
-  box-shadow: 0px 3px 10px #333;
+    background-color: #8296f7;
+    box-shadow: 0px 3px 10px #333;
 }
 
 .navbar-brand:hover {
-  color: #82f7bd !important;
+    color: #82f7bd !important;
 }
 
 .nav-link {
-  color: white !important;
+    color: white !important;
 }
 
 .nav-link:hover {
-  color: #82f7bd !important;
+    color: #82f7bd !important;
 }
 
 .container-fluid {
-  padding: 2em;
-  height: 100%
+    padding: 2em;
+    height: 100%;
 }
 
 .card {
-  width: 70vw;
+    width: 70vw;
 }
 
 #profile-card {
-  background-color: #84e4f7;
-  background-image: url(../images/sky.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border-radius: 8px;
+    background-color: #84e4f7;
+    background-image: url(../images/sky.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 8px;
 }
 
 .card-img {
-  width: 150px;
-  height: 150px;
+    width: 150px;
+    height: 150px;
 }
 
 h1 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: white;
-  text-shadow: 0 0 20px black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    text-shadow: 0 0 20px black;
 }
 
 .card-header {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 .badge-purple {
-  background-color: #8296f7;
-  color: white;
+    background-color: #8296f7;
+    color: white;
 }
 
 .all-posts-card {
-  background-color: #82f7bd;
+    background-color: #82f7bd;
 }
 
 hr {
-  margin-bottom: 5px;
+    margin-bottom: 5px;
 }
 
 .btn-delete {
-  position: absolute;
-  top: 2px;
-  right: 2px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
 }
 
 #edit-icon {
-  color: #82f7bd;
-  font-size: 30px;
-  position: absolute;
-  right: 10px;
-  top: 5px;
+    color: #82f7bd;
+    font-size: 30px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
 }
