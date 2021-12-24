@@ -63,3 +63,17 @@ h1 {
 hr {
   margin-bottom: 5px;
 }
+
+.btn-delete {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+#edit-icon {
+  color: #82f7bd;
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
