@@ -129,7 +129,7 @@ This page displays all of the Returned Citizens profile pictures, bios, and the 
 
 ### The Profile Page ###
 
-This page can be accessed directly through the navigation bar icon, Edit Profile page, or by clicking on their name in the Forum Page or Listings page. The delete functionality is implemented on this page to allow users to delete any of their posts.
+This page can be accessed directly through the navigation bar icon, Edit Profile page, or by clicking on their name in the Forum Page or Listings page. The delete function is implemented on this page to allow users to remove any of their posts.
 
 ![profile](https://user-images.githubusercontent.com/66227043/147308776-64f0ac84-a886-4432-b1ca-996bbf287df7.png)
 
