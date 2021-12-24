@@ -106,7 +106,7 @@ This is the first page of RC Journey, where users can choose to login or registe
 
 ### The Register Page ###
 
-![register](https://user-images.githubusercontent.com/66227043/147307370-6db93844-d3b8-4a39-9094-8ad75257c8d6.png)
+![image](https://user-images.githubusercontent.com/77951371/147315584-f6b086d3-83fd-49be-b950-062552ecc4c1.png)
 
 ### The Dashboard Page ###
 
