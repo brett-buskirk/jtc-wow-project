@@ -36,7 +36,7 @@
         <a class="nav-link" href="{% url 'listings' %}">Listings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i></a>
       </li>
     </ul>
   </nav>
@@ -49,6 +49,9 @@
         <div class="col-10 my-auto">
           <h1 class="display-1">{{ profile.user.username }}</h1>
         </div>
+        {% if current_user == profile.id %}
+          <a id="edit-icon" href="{% url 'editprofile' user_id %}"><i class="fas fa-edit"></i></a>
+        {% endif %}
       </div>
       <div class="card-body">
         <p class="card-text">{{ profile.bio }}</p>
@@ -82,7 +85,7 @@
                 {% csrf_token %}
                 <input type="hidden" name="post_id" value="{{post.post_id}}">
                 {% if current_user == profile.id %}
-                  <input type="submit"  class="btn btn-danger btn-sm" value="Delete">
+                  <input type="submit"  class="btn btn-danger btn-sm btn-delete" value="Delete">
                 {% endif %}
              </form>
             </div>

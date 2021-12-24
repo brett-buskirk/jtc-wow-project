@@ -78,7 +78,8 @@ def profile(request, pk):
     context = {
       "profile": profile, 
       "posts": posts_page_obj,
-      "current_user": request.user.profile.id
+      "current_user": request.user.profile.id,
+      "user_id": request.user.id
     }
     return render(request, 'profile.html', context)
 
@@ -113,8 +114,12 @@ def forum(request):
         # set the page
         posts_page_obj = paginate_posts.get_page(page)
 
-        context = {'form': form,
-                   'post_filter': post_filter, 'posts_page_obj': posts_page_obj}
+        context = {
+          'form': form,
+          'post_filter': post_filter, 
+          'posts_page_obj': posts_page_obj,
+          "current_user": request.user.profile.id
+          }
         return render(request, 'forum.html', context)
 
     if request.method == 'POST':
@@ -135,7 +140,10 @@ def forum(request):
 def listings(request):
     profiles = Profile.objects.all()
     print(profiles[0].user.id)
-    context = {'profiles': profiles}
+    context = {
+      'profiles': profiles,
+      "current_user": request.user.profile.id
+    }
     return render(request, 'listings.html', context)
 
 
