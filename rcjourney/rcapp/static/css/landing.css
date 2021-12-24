@@ -1,72 +1,72 @@
 body {
-  background-image: url('../images/sky2.jpg');
-  background-size: cover;
+    background-image: url('../images/sky2.jpg');
+    background-size: cover;
 }
 
 .navbar {
-  background-color: #8296f7;
-  box-shadow: 0px 3px 10px #333;
+    background-color: #8296f7;
+    box-shadow: 0px 3px 10px #333;
 }
 
 .navbar-brand:hover {
-  color: #82f7bd !important;
+    color: #82f7bd !important;
 }
 
 .nav-link {
-  color: white !important;
+    color: white !important;
 }
 
 .nav-link:hover {
-  color: #82f7bd !important;
+    color: #82f7bd !important;
 }
 
 .card {
-  flex-direction: row;
-  align-items: center;
-  height: 175px;
-  width: 90vw;
-  margin: 20px auto;
-  background-color: rgba(130, 247, 189, .6);
-  border-top-left-radius: 25%;
+    flex-direction: row;
+    align-items: center;
+    height: 175px;
+    width: 90vw;
+    margin: 20px auto;
+    background-color: rgba(130, 247, 189, .6);
+    border-top-left-radius: 25%;
 }
 
 .card-title {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .card img {
-  width: 135px;
-  height: 135px;
-  border-radius: 100%;
-  margin-top: 17px;
-  margin-left: 9px;
+    width: 135px;
+    height: 135px;
+    border-radius: 100%;
+    margin-top: 17px;
+    margin-left: 9px;
 }
 
 #about {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  word-wrap: break-word;
-  background-color: rgba(255, 255, 255, .7);
-  border-radius: .25rem;
-  border-top-right-radius: 25%;
-  margin: 20px auto;
-  align-items: center;
-  width: 90vw;
-  height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, .7);
+    border-radius: .25rem;
+    border-top-right-radius: 25%;
+    margin: 20px auto;
+    align-items: center;
+    width: 90vw;
+    height: fit-content;
 }
 
 .about-body {
-  display: inline-block;
+    display: inline-block;
 }
 
 .about-title {
-  width: 625px;
-  padding: 20px;
+    width: 625px;
+    padding: 20px;
 }
 
 @media only screen and (max-width: 768px) {
-  .card {
-    height: fit-content;
-  }
+    .card {
+        height: fit-content;
+    }
 }
